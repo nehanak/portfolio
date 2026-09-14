@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neha Nakirikanti | UX Design and Engineering</title>
+<meta name="description" content="Portfolio of Neha Nakirikanti: user research, interaction design, and front end engineering for tools that help people navigate complicated systems.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#E9E7E0;
+    --paper-deep:#DFDCD3;
+    --ink:#14161A;
+    --ink-soft:#4A4F55;
+    --pine:#1C5B4F;
+    --signal:#E0A526;
+    --rule:#C6C2B7;
+    --measure:64ch;
+  }
+
+  *{box-sizing:border-box;}
+
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation:none !important; transition:none !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"IBM Plex Sans", system-ui, sans-serif;
+    font-size:17px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--pine); text-decoration:none; border-bottom:1px solid rgba(28,91,79,.35);}
+  a:hover{border-bottom-color:var(--pine);}
+  a:focus-visible{outline:2px solid var(--pine); outline-offset:3px; border-radius:2px;}
+
+  .wrap{max-width:900px; margin:0 auto; padding:0 28px;}
+
+  /* masthead */
+  .masthead{padding:88px 0 56px;}
+  .name{
+    font-family:"Instrument Serif", Georgia, serif;
+    font-size:clamp(46px, 8vw, 88px);
+    line-height:.95;
+    letter-spacing:-.01em;
+    margin:0 0 22px;
+    font-weight:400;
+  }
+  .standfirst{
+    max-width:var(--measure);
+    font-size:clamp(18px,2.2vw,21px);
+    line-height:1.5;
+    margin:0 0 30px;
+    color:var(--ink);
+  }
+  .standfirst em{font-family:"Instrument Serif", Georgia, serif; font-style:italic; font-size:1.1em;}
+  .contact{
+    display:flex; flex-wrap:wrap; gap:8px 22px;
+    font-size:15px; color:var(--ink-soft);
+    padding-top:22px; border-top:1px solid var(--rule);
+    max-width:var(--measure);
+  }
+
+  /* section heading */
+  .section-head{
+    font-family:"IBM Plex Sans", sans-serif;
+    font-weight:600; font-size:15px; letter-spacing:.02em;
+    margin:0 0 6px; color:var(--ink-soft);
+  }
+
+  /* case study */
+  .case{padding:56px 0; border-top:1px solid var(--rule);}
+
+  .case-title{
+    font-family:"Instrument Serif", Georgia, serif;
+    font-weight:400;
+    font-size:clamp(30px,4.4vw,44px);
+    line-height:1.1;
+    margin:0 0 10px;
+  }
+  .case-sub{
+    max-width:var(--measure);
+    color:var(--ink-soft);
+    margin:0 0 4px;
+    font-size:16px;
+  }
+  .stack{
+    max-width:var(--measure);
+    color:var(--ink-soft);
+    font-size:15px;
+    margin:0 0 18px;
+  }
+  .status{
+    display:inline-block;
+    background:var(--signal);
+    color:var(--ink);
+    font-size:13px; font-weight:600;
+    padding:2px 9px; border-radius:2px;
+    margin-bottom:14px;
+  }
+  .case-links{margin:0 0 30px; font-size:15px; display:flex; flex-wrap:wrap; gap:6px 20px;}
+
+  /* the route: problem, research, design, outcome */
+  .route{
+    list-style:none;
+    margin:0; padding:0 0 0 34px;
+    position:relative;
+    max-width:var(--measure);
+  }
+  .route::before{
+    content:"";
+    position:absolute; left:6px; top:9px; bottom:9px;
+    width:2px; background:var(--pine);
+  }
+  .stop{position:relative; padding-bottom:26px;}
+  .stop:last-child{padding-bottom:0;}
+  .stop::before{
+    content:"";
+    position:absolute; left:-34px; top:7px;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--paper);
+    border:2px solid var(--pine);
+  }
+  .stop:last-child::before{background:var(--signal); border-color:var(--pine);}
+  .stop h3{
+    font-size:15px; font-weight:600; margin:0 0 4px;
+    color:var(--pine);
+  }
+  .stop p{margin:0; color:var(--ink);}
+
+  /* screenshot slot */
+  figure{margin:30px 0 0; max-width:var(--measure);}
+  figure img{width:100%; display:block; border:1px solid var(--rule);}
+  .slot{
+    border:2px dashed var(--rule);
+    background:var(--paper-deep);
+    padding:34px 22px;
+    text-align:center;
+    color:var(--ink-soft);
+    font-size:14px;
+  }
+  figcaption{font-size:14px; color:var(--ink-soft); margin-top:8px;}
+
+  /* about and footer */
+  .about{padding:56px 0; border-top:1px solid var(--rule);}
+  .about p{max-width:var(--measure); margin:0 0 16px;}
+  footer{
+    padding:44px 0 80px;
+    border-top:1px solid var(--rule);
+    color:var(--ink-soft); font-size:15px;
+  }
+  footer .name-small{
+    font-family:"Instrument Serif", Georgia, serif;
+    font-size:24px; color:var(--ink); display:block; margin-bottom:8px;
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead wrap">
+  <h1 class="name">Neha<br>Nakirikanti</h1>
+  <p class="standfirst">I design and build tools for people stuck inside complicated systems. Students who don't know where to ask for help. People leaving incarceration with a stack of paperwork and no map. <em>Research first, then interface, then code.</em></p>
+  <div class="contact">
+    <span>Atlanta, GA</span>
+    <a href="mailto:snakirikanti7@gatech.edu">snakirikanti7@gatech.edu</a>
+    <a href="https://www.linkedin.com/in/neha-nakirikanti/">LinkedIn</a>
+    <a href="https://github.com/nehanak">GitHub</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- CASE 1 -->
+  <article class="case wrap">
+    <p class="section-head">Case study</p>
+    <h2 class="case-title">Student Support Navigator</h2>
+    <p class="case-sub">Lead designer and developer · First author research, ACM SIGCSE 2026 · Georgia Tech</p>
+    <p class="stack">React, Vite, FastAPI, Anthropic API, Qualtrics · Deployed on Vercel and Render</p>
+    <p class="case-links">
+      <a href="https://csed-struggles.vercel.app/">Live tool</a>
+      <a href="https://github.com/nehanak/csed-struggles">Source</a>
+    </p>
+
+    <ol class="route">
+      <li class="stop">
+        <h3>The problem</h3>
+        <p>CS students who are struggling usually know it long before they ask anyone. The gap isn't a lack of resources. It's that naming the problem out loud, to a professor or a TA, feels like an admission. Existing support systems all start at the point where a student has already decided to speak up.</p>
+      </li>
+      <li class="stop">
+        <h3>Research</h3>
+        <p>I ran a mixed methods study on a research platform I built in Qualtrics: 200+ survey responses across 45 institutions, capturing where students get stuck and who, if anyone, they tell. The dominant pattern was students misreading a normal, widely shared difficulty as a personal, disqualifying one.</p>
+      </li>
+      <li class="stop">
+        <h3>Design decisions</h3>
+        <p>I designed the interaction around reflection rather than referral. A student describes what's going on in their own words; the tool classifies it against the research taxonomy and reflects back what it heard, including how common that experience was in the dataset. No account, no advisor loop, no stored identity, making this the lowest stakes possible entry point. The classifier's output shapes the tone of the response, not just its content.</p>
+      </li>
+      <li class="stop">
+        <h3>Outcome</h3>
+        <p>The classifier reached 85% accuracy (Cohen's κ = 0.774) after several rounds of prompt iteration against hand labeled responses. The tool is live and the underlying research was accepted to ACM SIGCSE 2026 as a first author paper on CS curriculum reform.</p>
+      </li>
+    </ol>
+
+    <figure>
+      <!-- Replace this div with: <img src="images/navigator.png" alt="Support Navigator interface"> -->
+      <div class="slot">Add screenshot: the reflection screen with a response rendered</div>
+      <figcaption>Reflection view: the student's input, classified and reflected back.</figcaption>
+    </figure>
+  </article>
+
+  <!-- CASE 2 -->
+  <article class="case wrap">
+    <p class="section-head">Case study</p>
+    <h2 class="case-title">Bridge Forward</h2>
+    <p class="case-sub">Lead designer and developer · Built with Common Good and Georgia Works</p>
+    <p class="stack">React, Vite (mobile first PWA), FastAPI, SQLite, Claude tool calling</p>
+    <p><span class="status">In progress, prototyping</span></p>
+
+    <ol class="route">
+      <li class="stop">
+        <h3>The problem</h3>
+        <p>Through Common Good I mentor formerly incarcerated adults at Georgia Works. Reentry is a set of long, interlocking processes: ID documents, GED, job applications, financial aid. Each has its own deadlines and failure points. Mentors carry all of that in their heads for a dozen people at once, and progress quietly stalls between check ins.</p>
+      </li>
+      <li class="stop">
+        <h3>Research</h3>
+        <p>I interviewed reentry stakeholders and mentors to map where cases actually break down. Two constraints came out of it that shaped everything: most participants have a phone and nothing else, and typing a long message is a much bigger ask than tapping a button.</p>
+      </li>
+      <li class="stop">
+        <h3>Design decisions</h3>
+        <p>Two views of one case: a participant check in built primarily from taps with short text only where it's genuinely needed, and a mentor dashboard that surfaces flags rather than waiting to be read. Goals use fixed preset categories, so anything that doesn't fit routes to a mentor instead of being silently bucketed as "other." The agent can improvise wording but not invent new action types, and anything legal or mental health related requires human review before it reaches a participant.</p>
+      </li>
+      <li class="stop">
+        <h3>Where it stands</h3>
+        <p>Backend and frontend are scaffolded and I'm prototyping the check in flow against four validated goal categories: college, financial aid, jobs, and GED prep. The open design question is how much the agent should say before a mentor has seen it.</p>
+      </li>
+    </ol>
+
+    <figure>
+      <!-- Replace with: <img src="images/bridge-forward.png" alt="Bridge Forward mentor dashboard"> -->
+      <div class="slot">Add screenshot or Figma frame: mentor dashboard and participant check in, side by side</div>
+      <figcaption>Two views of one case: participant check in and mentor dashboard.</figcaption>
+    </figure>
+  </article>
+
+  <!-- CASE 3 -->
+  <article class="case wrap">
+    <p class="section-head">Case study</p>
+    <h2 class="case-title">Atlanta Food Finder</h2>
+    <p class="case-sub">Five person team · Agile/Scrum, tracked in Jira</p>
+    <p class="stack">Django, JavaScript, Google Maps API</p>
+    <p class="case-links">
+      <a href="https://github.com/nehanak/ATL-Food-Finder">Source</a>
+    </p>
+
+    <ol class="route">
+      <li class="stop">
+        <h3>The problem</h3>
+        <p>Restaurant search returns a list when what people actually want is a decision. Filters exist across most food apps, but they're stacked in ways that make the last step, picking one place and getting there, take the most effort.</p>
+      </li>
+      <li class="stop">
+        <h3>Design decisions</h3>
+        <p>We built search and map as one view rather than two tabs, so narrowing by cuisine, rating, price, or distance changes what's on the map immediately. Each listing carries only what a decision needs: hours, cuisine, rating, address. Reviews and directions sit one step away instead of inline.</p>
+      </li>
+      <li class="stop">
+        <h3>Working as a team</h3>
+        <p>Five contributors on a two week sprint cadence, with scope managed in Jira. Most of my design effort went into arguing scope down: the feature list we started with wouldn't have shipped, and the version that did is narrower and clearer for it.</p>
+      </li>
+      <li class="stop">
+        <h3>Outcome</h3>
+        <p>Shipped as a working application with search, filtering, map view, reviews, and directions. 40 commits across the team.</p>
+      </li>
+    </ol>
+
+    <figure>
+      <!-- Replace with: <img src="images/food-finder.png" alt="Atlanta Food Finder search and map view"> -->
+      <div class="slot">Add screenshot: combined search results and map view</div>
+      <figcaption>Search and map as a single view.</figcaption>
+    </figure>
+  </article>
+
+  <!-- ABOUT -->
+  <section class="about wrap">
+    <p class="section-head">About</p>
+    <h2 class="case-title">How I work</h2>
+    <p>I'm a senior in Computer Science at Georgia Tech, on the Information Internetworks and People thread. My internships at PwC, Delta, and Synovus were mostly the same problem in different clothes: someone is doing something manually and badly because the interface between them and the system is wrong.</p>
+    <p>I prototype with LLMs the way I'd prototype with Figma, quickly, to find out whether an interaction actually holds up before committing to it. Both of the AI tools here started as throwaway builds that answered a design question I couldn't answer on paper.</p>
+    <p>Outside of coursework I lead Common Good at Georgia Tech, where I mentor formerly incarcerated adults in CS and professional development, and I founded Empower, a youth leadership program for Atlanta students. That work is where most of my research questions come from.</p>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <span class="name-small">Neha Nakirikanti</span>
+  <a href="mailto:snakirikanti7@gatech.edu">snakirikanti7@gatech.edu</a> · <a href="https://www.linkedin.com/in/neha-nakirikanti/">LinkedIn</a> · <a href="https://github.com/nehanak">GitHub</a>
+</footer>
+
+</body>
+</html>
