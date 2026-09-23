@@ -247,6 +247,10 @@
         <h3>Where it stands</h3>
         <p>Backend and frontend are scaffolded and I'm prototyping the check in flow against four validated goal categories: college, financial aid, jobs, and GED prep. The open design question is how much the agent should say before a mentor has seen it.</p>
       </li>
+      <li class="stop">
+      <h3>Constraints & tradeoffs</h3>
+      <p>The agent's action space is intentionally fixed — update goal, create goal, look up a resource, or flag a mentor — so it can improvise language but never invent a new type of action. Resource lookup pulls only from a curated Georgia-specific database, not the open web, to keep recommendations trustworthy for a high-stakes population. Anything legal or mental-health related routes to mandatory human review before it reaches a participant. The open risk I'm still working through: how much the agent should be allowed to say to a participant before a mentor has seen it — too cautious and it's not useful, too loose and it risks eroding trust.</p>
+    </li>
     </ol>
 
   </article>
