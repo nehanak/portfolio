@@ -203,9 +203,17 @@
         <p>I designed the interaction around reflection rather than referral. A student describes what's going on in their own words; the tool classifies it against the research taxonomy and reflects back what it heard, including how common that experience was in the dataset. No account, no advisor loop, no stored identity, making this the lowest stakes possible entry point. The classifier's output shapes the tone of the response, not just its content.</p>
       </li>
       <li class="stop">
+        <h3>What the tool does</h3>
+        <p>After a student submits, the tool responds with a short, validating reflection, then classifies the input against the research taxonomy (e.g., "Student Issue") and surfaces the related theme it maps to. It then returns three curated, Georgia Tech–specific resources tied to that theme — not a generic search result, a short, decided list. A student can immediately share something else, so the tool works as a loop rather than a one-off form.</p>
+    </li>
+      <li class="stop">
         <h3>Outcome</h3>
         <p>The classifier reached 85% accuracy (Cohen's κ = 0.774) after several rounds of prompt iteration against hand labeled responses. The tool is live and the underlying research was accepted to ACM SIGCSE 2026 as a first author paper on CS curriculum reform.</p>
       </li>
+      <figure>
+      <img src="ssn-output.png" alt="Student Support Navigator reflection screen showing classification, related theme, and curated resources">
+      <figcaption>The response view after a student shares what they're struggling with.</figcaption>
+    </figure>
     </ol>
 
   </article>
